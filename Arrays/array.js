@@ -26,20 +26,76 @@ pop -> excluir elemento ao final da lista: lista.pop()
 shift -> excluir elemento ao inicio da lista:lista.shift()
 
 
+pesquisar elementos dentro do array
+
+indexOf - Método que retorna o índice do elemento caso exista
+
+sintaxe: lista.indexOf(elemento) -> indice
+
+ordenar arrays
+
+sort -> Método que ordena alfanumericamente os elementos
+
+sintaxe: lista.sort()
+
+Como posso ordenar valores númericos? 
+
+//Primeiro crio uma função:
+
+function ordenaNumeros(a, b){
+    // (a - b) == 0: ordem é mantida;
+    // (a - b) > 0: a vem antes de b, uma vez que b é menor que a;
+    // (a - b) == 0: a vem depois de b, uma vez que b é maior que a.
+    
+    return a - b
+}
+
+//Depois passo a referencia para o método:
+
+lista.sort(ordenaNumeros) // passo a referencia, não a função ativada.
+
+
+
+
 */
 
-function estaPreenchido(elemento){
-    if(elemento.length == 0){
+
+function trocarPrimeiroCaracter(elemento){
+    return elemento.replace(elemento[0], elemento[0].toUpperCase())
+}
+
+function ordenar(){
+    objetos = objetos.sort()
+    console.log(objetos)
+}
+
+
+function elementoExiste(lista, elemento) {
+    if(lista.indexOf(elemento) === -1){
+        return false
+    } else{
+        return true
+    }
+}
+
+function estaPreenchido(elemento) {
+    if(elemento.length > 0){
         return true
     } else{
         return false
     }
 }
 
-function adicionarElemento(array){
-    let elemento = document.getElementById('add').value
-    if(estaPreenchido()){
-        array.push(elemento)
+function adicionarElemento(){
+    let elemento = document.getElementById('inserir')
+    if(estaPreenchido(elemento.value)){
+        const elem = trocarPrimeiroCaracter(elemento.value)
+        if(elementoExiste(objetos, elem) === false){
+            objetos.push(elem)
+            elemento.value = ''
+        } else{
+            alert('Objeto já foi adicionado.')
+        }
     } else{
         alert('Informe um valor válido.')
     }
@@ -47,3 +103,5 @@ function adicionarElemento(array){
 }
 
 var objetos = ['Cadeira', 'Impressora', 'Garfo']
+
+
