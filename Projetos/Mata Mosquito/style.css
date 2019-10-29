@@ -1,0 +1,64 @@
+html {
+    cursor: url('imagens/mata_mosca.png') 30px 30px;
+}
+
+
+.painel {
+    position: absolute;
+    background-color: white;
+    opacity: 0.7;
+    border-top: solid 1px white;
+    padding: 10px;
+    bottom: 0px;
+    left: 0px;
+    width: 190px;
+}
+
+.vidas {
+    float: left;
+}
+
+.cronometro {
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+body {
+    background-image: url("imagens/bg.jpg");
+    background-repeat: no-repeat; 
+}
+
+
+.mosca1 {
+    width: 50px;
+    height: 50px;
+    
+}
+
+.mosca2 {
+    width: 70px;
+    height: 70px;
+}
+
+
+.mosca3 {
+    width: 90px;
+    height: 90px;
+}
+
+
+#perdeu, #venceu, #inicio {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+
+    font-family: monospace;
+    font-size: 18px;
+    height: 46px;
+    width: 120px;
+}

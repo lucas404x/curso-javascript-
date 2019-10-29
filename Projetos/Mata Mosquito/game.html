@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mata Mosquito</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+
+
+<body onresize="ajustarTamanhoJogo()">
+    <div class="painel">
+        <div class="vidas">
+            <img src="imagens/coracao_cheio.png" alt="coração" id="coracao1">
+            <img src="imagens/coracao_cheio.png" alt="coração" id="coracao2">
+            <img src="imagens/coracao_cheio.png" alt="coração" id="coracao3">
+        </div>
+        <div class="cronometro">Tempo restante: 60</div>
+    </div>
+    
+    <script>
+
+        //gerar uma mosca a cada 1 seg
+
+        let tempo = setInterval(function() {
+            posicaoRandomica()
+            ajustarTempo()
+            
+            if(vidas == 0) {
+                clearInterval(tempo)
+                window.location.href = 'fim_de_jogo.html'
+            }
+            if(pegarTempo(document.getElementsByClassName('cronometro')) == 0) {
+                clearInterval(tempo)
+                window.location.href = 'vitoria.html'
+                }
+            }, 1000)
+
+        
+        </script>
+</body>
+</html>
