@@ -1,0 +1,14 @@
+.dados {
+    border-radius: 15px;
+    text-align: center;
+    height: 36px;
+    width: 265px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+#info {
+    position: absolute;
+    bottom: 50%;
+    left: 20%;
+}
